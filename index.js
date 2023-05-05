@@ -2,7 +2,7 @@ const express = require('express');
 var cors = require('cors');
 const app = express();
 const port = 3000;
-// app.use(cors());
+app.use(cors());
 
 app.get('/', (req, res) => {
    res.send('Hello World!');
@@ -19,7 +19,6 @@ app.get('/sound/:name', (req, res, next) => {
     } else {
         res.send({'sound':'알 수 없음'});
     }
-    // res.json({});
 });
 
 app.listen(port, () => {
